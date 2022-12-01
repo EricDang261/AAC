@@ -11,7 +11,7 @@ import SwiftUI
 struct AACApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(cards: testData)
+            ContentView(cards: FruitData)
         }
     }
 }

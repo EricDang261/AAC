@@ -11,22 +11,23 @@ import AVFoundation
 let synthesizer = AVSpeechSynthesizer() ; // instance for tts
 
 struct ContentView: View {
-    var cards: [Card]
+    var cards: [FruitCard]
     var body: some View {
-        NavigationView{
-            ScrollView{
-                VStack{
-                    TypeInputView()
-                    Spacer()
-                    ImagesView(cards:cards)
+//        NavigationView{
+//            ScrollView{
+//                VStack{
+//                    TypeInputView()
+//                    Spacer()
+//                    ImagesView(cards:cards)
+                    TopicView()
                     
-                }
-        
-                   
-            }
-            .navigationTitle("AAC")
-        }
-        .navigationViewStyle(.stack)
+//                }
+//
+//
+//            }
+//            .navigationTitle("AAC")
+//        }
+//        .navigationViewStyle(.stack)
     }
 }
 
@@ -34,7 +35,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(cards: testData)
+        ContentView(cards: FruitData)
     }
 }
 

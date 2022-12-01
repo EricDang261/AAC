@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct TopicView: View {
-    let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
+    let menu = Bundle.main.decode([LocationSection].self, from: "topic.json")
     var body: some View {
         NavigationView{
             List{
                 ForEach(menu){ section in
-                    Section(header: Text(section.name)){
+                    Section(header:
+                        Text(section.name)
+                        .font(.system(size: 50))){
                         ForEach(section.items){ item in
-                            Text(item.name)
+                            NavigationLink(destination:Text(item.name)){
+                                ItemRow(item : item)
+                            }
                         }
-                        
                     }
                 }
             }
             
-        .navigationTitle("Topic")
+        .navigationTitle("Where are you now?")
         .listStyle(GroupedListStyle())
         }
         .navigationViewStyle(.stack)
